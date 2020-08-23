@@ -1,0 +1,63 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# These files were created by ./configure
+Makefile
+Makefile.in
+INSTALL
+aclocal.m4
+autom4te.cache/
+compile
+config.guess
+config.h
+config.h.in
+config.log
+config.status
+config.sub
+configure
+depcomp
+features/.deps/
+fuegomain/.deps/
+fuegomain/fuego
+fuegotest/.deps/
+fuegotest/fuego_test
+go/.deps/
+gouct/.deps/
+gtpengine/.deps/
+install-sh
+missing
+simpleplayers/.deps/
+smartgame/.deps/
+stamp-h1
+test-driver
+unittestmain/.deps/

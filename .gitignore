@@ -65,3 +65,6 @@ unittestmain/.deps/
 # CLion files
 .idea/
 cmake-build-debug/
+
+# Mac OS files
+.DS_Store

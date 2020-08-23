@@ -68,7 +68,8 @@ SgAssertionHandler::~SgAssertionHandler()
 
 //----------------------------------------------------------------------------
 
-#ifndef NDEBUG
+// TODO: Uncomment and research why this is needed
+// #ifndef NDEBUG
 
 /** Set the shell variable SMARTGAME_ASSERT_CONTINUE to drop into the debugger
     instead of aborting the program whenever an SG_ASSERT fails */
@@ -84,7 +85,7 @@ void SgHandleAssertion(const char* expr, const char* file, int line)
     if (! s_assertContinue)
         abort();
 }
-#endif
+// #endif
 
 //----------------------------------------------------------------------------
 

@@ -94,42 +94,44 @@ void ParseOptions(int argc, char** argv)
 
 //----------------------------------------------------------------------------
 
-int main(int argc, char** argv)
-{
-    if (argc > 0 && argv != 0)
+namespace FuegoTestMain {
+    int main(int argc, char** argv)
     {
-        g_programPath = argv[0];
+        if (argc > 0 && argv != 0)
+        {
+            g_programPath = argv[0];
+            try
+            {
+                ParseOptions(argc, argv);
+            }
+            catch (const SgException& e)
+            {
+                SgDebug() << e.what() << "\n";
+                return 1;
+            }
+        }
+        if (g_quiet)
+            SgDebugToNull();
         try
         {
-            ParseOptions(argc, argv);
+            SgInit();
+            GoInit();
+            MainLoop();
+            GoFini();
+            SgFini();
         }
-        catch (const SgException& e)
+        catch (const GtpFailure& e)
         {
-            SgDebug() << e.what() << "\n";
+            SgDebug() << e.Response() << '\n';
             return 1;
         }
+        catch (const std::exception& e)
+        {
+            SgDebug() << e.what() << '\n';
+            return 1;
+        }
+        return 0;
     }
-    if (g_quiet)
-        SgDebugToNull();
-    try
-    {
-        SgInit();
-        GoInit();
-        MainLoop();
-        GoFini();
-        SgFini();
-    }
-    catch (const GtpFailure& e)
-    {
-        SgDebug() << e.Response() << '\n';
-        return 1;
-    }
-    catch (const std::exception& e)
-    {
-        SgDebug() << e.what() << '\n';
-        return 1;
-    }
-    return 0;
 }
 
 //----------------------------------------------------------------------------

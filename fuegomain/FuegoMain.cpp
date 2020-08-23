@@ -143,7 +143,6 @@ void PrintStartupMessage()
 } // namespace
 
 //----------------------------------------------------------------------------
-
 int main(int argc, char** argv)
 {
     /** Settings from command line options */
@@ -182,8 +181,8 @@ int main(int argc, char** argv)
         if (options.m_maxGames >= 0)
             engine.SetMaxClearBoard(options.m_maxGames);
         if (options.m_useBook)
-            FuegoMainUtil::LoadBook(engine.Book(), 
-            					    SgPlatform::GetProgramDir());
+            FuegoMainUtil::LoadBook(engine.Book(),
+                                    SgPlatform::GetProgramDir());
         if (options.m_config != "")
             engine.ExecuteFile(options.m_config);
         if (! options.m_inputFiles.empty())
@@ -193,8 +192,8 @@ int main(int argc, char** argv)
                 string file = options.m_inputFiles[i];
                 std::ifstream fin(file.c_str());
                 if (! fin)
-                    throw SgException(boost::format("Error file '%1%'") 
-                    				  % file);
+                    throw SgException(boost::format("Error file '%1%'")
+                                      % file);
                 GtpInputStream in(fin);
                 GtpOutputStream out(std::cout);
                 engine.MainLoop(in, out);

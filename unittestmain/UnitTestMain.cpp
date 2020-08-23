@@ -64,6 +64,7 @@ bool init_unit_test()
     return true;
 }
 
+// TODO: Get rid of namespace and configure CMakeLists.txt
 namespace UnitTestMain {
     int main(int argc, char* argv[])
     {

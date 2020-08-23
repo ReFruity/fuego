@@ -94,6 +94,7 @@ void ParseOptions(int argc, char** argv)
 
 //----------------------------------------------------------------------------
 
+// TODO: Get rid of namespace and configure CMakeLists.txt
 namespace FuegoTestMain {
     int main(int argc, char** argv)
     {

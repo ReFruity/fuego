@@ -61,3 +61,7 @@ smartgame/.deps/
 stamp-h1
 test-driver
 unittestmain/.deps/
+
+# CLion files
+.idea/
+cmake-build-debug/

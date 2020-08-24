@@ -3,6 +3,7 @@ project(fuego)
 
 set(CMAKE_CXX_STANDARD 14)
 
+# TODO: Exclude mains from glob
 file(GLOB SOURCE_FILES **/*.cpp)
 add_executable(fuego ${SOURCE_FILES})
 

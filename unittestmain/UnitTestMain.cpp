@@ -64,12 +64,9 @@ bool init_unit_test()
     return true;
 }
 
-// TODO: Get rid of namespace and configure CMakeLists.txt
-namespace UnitTestMain {
-    int main(int argc, char* argv[])
-    {
-        return boost::unit_test::unit_test_main(&init_unit_test, argc, argv);
-    }
+int main(int argc, char* argv[])
+{
+    return boost::unit_test::unit_test_main(&init_unit_test, argc, argv);
 }
 
 //----------------------------------------------------------------------------

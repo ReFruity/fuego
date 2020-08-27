@@ -68,3 +68,5 @@ cmake-build-debug/
 
 # Mac OS files
 .DS_Store
+
+config.h.in~

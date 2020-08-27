@@ -3,8 +3,8 @@ project(fuego)
 
 set(CMAKE_CXX_STANDARD 14)
 
-# TODO: Exclude mains from glob
-file(GLOB SOURCE_FILES **/*.cpp)
+file(GLOB SOURCE_FILES fuegomain**/*.cpp smartgame**/*.cpp go**/*.cpp gouct**/*.cpp gtpengine**/*.cpp features**/*.cpp
+        simpleplayers**/*.cpp)
 add_executable(fuego ${SOURCE_FILES})
 
 target_include_directories(fuego PUBLIC fuegomain smartgame go gouct gtpengine features simpleplayers)

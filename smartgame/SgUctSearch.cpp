@@ -16,6 +16,7 @@
 #include "SgMath.h"
 #include "SgPlatform.h"
 #include "SgWrite.h"
+#include "SgProp.h"
 
 using boost::barrier;
 using boost::condition;
@@ -526,12 +527,26 @@ SgUctSearch::FindBestChild(const SgUctNode& node,
             SG_ASSERT(false);
             value = child.MoveCount();
         }
+
+        // std::string move = SgPointUtil::PointToString(child.Move());
+
+        // std::cout << "Move: " << move << std::endl;
+        // std::cout << "Value: " << value << std::endl;
+
+
         if (bestChild == 0 || value > bestValue)
         {
             bestChild = &child;
             bestValue = value;
         }
+
+//        std::cout << "childMove: " << child.Move() << std::endl;
+//        std::cout << "bestValue: " << bestValue << std::endl;
     }
+
+//    std::cout << "child: " << bestChild->Move() << std::endl;
+//    std::cout << "mean: " << bestChild->Mean() << std::endl;
+
     return bestChild;
 }
 
